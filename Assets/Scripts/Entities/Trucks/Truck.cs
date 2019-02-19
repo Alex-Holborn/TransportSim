@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 
-public class Truck : ScriptableObject
+public class Truck : MovableEntity
 {
     
-    public GameObject TruckObject { get; private set; }
     public TruckData TruckData { get; private set; }
-
 
     public Truck() { }
 
