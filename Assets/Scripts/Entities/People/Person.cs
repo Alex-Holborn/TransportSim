@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 
-public class Person : ScriptableObject
+public class Person : MovableEntity
 {
 
 }
