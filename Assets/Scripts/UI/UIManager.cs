@@ -5,23 +5,22 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
 
-    public InfoWindow OpenInfoWindow { get; private set; }
+    [SerializeField] private GameObject DebugMenuPrefab;
+    private GameObject DebugMenu;
 
-    public void DisplayInfoWindow(Entity e)
+    public void ToggleDebugMenu()
     {
-        if (OpenInfoWindow != null)
+        if (DebugMenu == null)
         {
-            if (!OpenInfoWindow.Object.Equals(e))
-            {
-                Destroy(OpenInfoWindow);
-                OpenInfoWindow = ScriptableObject.CreateInstance<InfoWindow>();
-                OpenInfoWindow.setEntityObject(e);
-            }
-        }else
+            DebugMenu = Instantiate(DebugMenuPrefab, GameObject.FindWithTag("Canvas").transform);
+        }
+        else if(DebugMenu.activeSelf)
         {
-            OpenInfoWindow = ScriptableObject.CreateInstance<InfoWindow>();
-            OpenInfoWindow.setEntityObject(e);
+            DebugMenu.SetActive(false);
+        }
+        else
+        {
+            DebugMenu.SetActive(true);
         }
     }
-
 }

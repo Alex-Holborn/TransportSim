@@ -1,17 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UIComponent : ScriptableObject
+public class UIComponent : MonoBehaviour
 {
-    public Canvas Canvas { get; private set; }
-
-    void Awake()
-    {
-        if (Canvas == null)
-        {
-            Canvas = FindObjectOfType<Canvas>();
-        }
-    }
+    //Inheriting this will allow UI components to share opening/closing features
+    
 }
